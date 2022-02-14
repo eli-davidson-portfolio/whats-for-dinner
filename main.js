@@ -4,9 +4,9 @@
 
 ##Iteration 0: Build Out Comp
 HTML
-[ ] fill out the form
+[x] fill out the form
 [ ] Create page structure
-[ ] Create Nav bar, including one button
+[x] Create Nav bar, including one button
 [ ] Create main section, including background image
 [ ] Create box 1, including title, radio buttons, and a button.
 [ ] Create box 2 and with svg space and a space to display two lines of text.
