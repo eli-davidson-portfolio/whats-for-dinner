@@ -9,10 +9,23 @@
 What's for Dinner?
       </section>
       <section id="add-a-recipe">
-        <button >ADD A RECIPE</button>
+        <button id="add-a-recipe">ADD A RECIPE</button>
       </section>
     </nav>
     <main class="main">
+      <section class="box meal-select-box" id="meal-select-box">
+          <section id="meal-select-title">
+            What are you looking for?
+          </section>
+          <form id="meal-select-form">
+            <input type="radio" id="side" name="meal" value="side">Side</input><br>
+            <input type="radio" id="main-dish" name="meal" value="main-dish">Main Dish</input><br>
+            <input type="radio" id="dessert" name="meal" value="main-dish">Dessert</input><br>
+            <input type="radio" id="entire-meal" name="meal" value="main-dish">Entire Meal</input><br>
+            <button type="button" id ="lets-cook">LET'S COOK!</button>
+          </form>
+      </section>
+
     </main>
   </body>
   <script type="text/javascript" src="main.js"></script>
