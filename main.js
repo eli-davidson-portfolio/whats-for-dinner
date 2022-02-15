@@ -46,7 +46,7 @@ var mealData = {
         "Garlic Butter Mushrooms",
         "Hush Puppies"
   ],
-    mainDishes: [
+  mainDishes: [
         "Spaghetti and Meatballs",
         "Pineapple Chicken",
         "Shakshuka",
@@ -80,6 +80,18 @@ var mealData = {
       "Tart Tatin",
       "Croissants",
       "Eclairs"
-  ],
+  ]
 }
 
+
+
+var buttons = {
+    letsCook: document.getElementById('lets-cook'),
+}
+
+buttons.letsCook.addEventListener('click', createMeal);
+
+function createMeal() {
+    var selectedMeal = document.querySelector('input[name="meal"]:checked')
+    console.log(selectedMeal.value)
+}
