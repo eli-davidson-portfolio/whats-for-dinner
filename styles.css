@@ -9,7 +9,8 @@ red - #ee5253
 */
 body {
     font-family: 'Roboto', sans-serif;
-    margin: 0
+    height: 100vh;
+    margin: 0;
 }
 
 nav {
@@ -17,7 +18,10 @@ nav {
     align-items: center;
     justify-content: space-between ;
     background-color: teal;
+    padding: 10px;
 }
+
+
 section {
 
 }
@@ -26,43 +30,66 @@ section {
     flex-direction: column;
     
 }
-#nav-bar-title {
-    margin: 5
-}
+
 #meal-select-form {
     margin: 10
 }
 #add-a-recipe {
-    margin: 5
+   
 }
 
 main {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    align-content: space-around;
-    height: 100%;
+    height: 100vh;
     background-image: url("./assets/burger-friends.jpg");
     background-position: center;
     background-size: cover;
 }
 
 .box {
-   padding: 30;
-   margin: 50;
+   height: 200px;
+   width: 300px;
+   align-items: baseline;
    background-color: rgba(225, 225, 225, .9);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
 }
 
 .hidden {
     display: none;
 }
-
-#crockpot { 
-
-
+.button-containter {
+    display: flex;
+	flex-direction: row-reverse;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: stretch;
+	align-content: stretch;
+}
+.button {
+    border: solid;
+    border-radius: 15px 15px;
+    border-width: 1px;
+    padding: 6px;
+    text-align: center;
+    text-transform: uppercase;
 }
 
-#lets-cook {
+#add-a-recipe-button {
+    background-color: white;
+}
+
+#meal-select-button {
     background-color: teal;
+}
+
+#meal-display-button {
+    background-color: grey;
 }
 

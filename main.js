@@ -18,8 +18,8 @@ CSS
 [x] add the js data structure.
 [x] add event listener for the lets cook button.
 [x] create a randomize array elements function
-[ ] create a show function.
-[ ] create a hide function.
+[x] create a show function.
+[x] create a hide function.
 [ ] create a show meal helper method
 [ ] create a hide meal helper method skelaton
 [ ] create a show crockpot helper method.
@@ -83,7 +83,8 @@ var mealData = {
   ]
 }
 
-
+var crockpot = document.getElementById('crockpot');
+//var form = document.getElementbyID('meal-select-form');
 
 var buttons = {
     letsCook: document.getElementById('lets-cook'),
@@ -92,20 +93,15 @@ var buttons = {
 buttons.letsCook.addEventListener('click', captureMealSelection);
 
 function captureMealSelection() {
+    //disable(form);
+    //hide(crockpot);
     var selectedMeal = document.querySelector('input[name="meal"]:checked').value
     var displayString = generateRandomMeal(selectedMeal);
     console.log(displayString);
 }
 
-function generateRandomMeal(mealSelection) {
-        if (mealSelection === 'sides') {
-            return getRandomElement(mealData.sides)
-        } else if (mealSelection ==='mainDishs') {
-            return getRandomElement(mealData.mainDishes)
-        } else if (mealSelection === 'desserts') {
-            return getRandomElement(mealData.disserts)
-        }
-    
+function generateRandomMeal(selectedMeal) {
+    return getRandomElement(mealData[selectedMeal])
 }
 
 function getRandomElement(array) {
@@ -118,4 +114,8 @@ function show(object) {
 
 function hide(object) {
     object.classList.add('hidden');
+}
+
+function disable(object) {
+    object.disabled = true;
 }

@@ -9,25 +9,32 @@
 What's for Dinner?
       </section>
       <section id="add-a-recipe">
-        <button id="add-a-recipe">ADD A RECIPE</button>
+        <div class="button" id="add-a-recipe-button">add a recipe</div>
       </section>
     </nav>
     <main class="main">
-      <section class="box meal-select-box" id="meal-select-box">
-          <section id="meal-select-title">
+      <section class="box" id="meal-select">
+          <section class="box-title" id="meal-select-title">
             What are you looking for?
           </section>
-          <form id="meal-select-form">
-            <input type="radio" id="side" name="meal" value="side">Side</input><br>
-            <input type="radio" id="main-dish" name="meal" value="main-dish">Main Dish</input><br>
-            <input type="radio" id="dessert" name="meal" value="main-dish">Dessert</input><br>
-            <input disabled="true" type="radio" id="entire-meal" name="meal" value="main-dish">Entire Meal</input><br>
-            <button type="button" id ="lets-cook">LET'S COOK!</button>
-          </form>
+          <section class="meal-select-content">
+            <form>
+              <input type="radio" id="side" name="meal" value="sides">Side</input>
+              <input type="radio" id="main-dish" name="meal" value="mainDishs">Main Dish</input>
+              <input type="radio" id="dessert" name="meal" value="desserts">Dessert</input>
+              <input disabled="true" type="radio" id="entire-meal" name="meal" value="entire-meal">Entire Meal</input>
+            </form>
+        </section>
+        <section class="button-container">
+            <div class="button" id="meal-select-button">let's cook</div>
+        </section>
       </section>
-      <section class="box meal-display-box" id="meal-display-box">
-          <img id="crockpot" src="./assets/cookpot.svg"><br>
-          <button id="clear">Clear</button>
+      <section class="box" id="meal-select">
+        <section class="box-title" id="meal-select-title">What are you looking for?</section>
+        <section id="meal-display-content">
+          <img src="./assets/cookpot.svg" alt="crockpot icon">
+        </section>
+        <div class="button" id="meal-display-button">clear</div>
       </section>
     </main>
   </body>
