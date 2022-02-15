@@ -16,8 +16,8 @@ CSS
 ##Iteration 1: Minimum Viable Product (MVP) - Add Random Side, Main and Dessert Functionality
 [x] (if possible) disable entire meal radio button
 [x] add the js data structure.
-[ ] add event listener for the lets cook button.
-[ ] create a randomize array elements function
+[x] add event listener for the lets cook button.
+[x] create a randomize array elements function
 [ ] create a show function.
 [ ] create a hide function.
 [ ] create a show meal helper method
@@ -110,4 +110,12 @@ function generateRandomMeal(mealSelection) {
 
 function getRandomElement(array) {
     return array[Math.floor(Math.random() * array.length)];
+}
+
+function show(object) {
+    object.classList.remove('hidden');
+}
+
+function hide(object) {
+    object.classList.add('hidden');
 }
