@@ -89,9 +89,25 @@ var buttons = {
     letsCook: document.getElementById('lets-cook'),
 }
 
-buttons.letsCook.addEventListener('click', createMeal);
+buttons.letsCook.addEventListener('click', captureMealSelection);
 
-function createMeal() {
-    var selectedMeal = document.querySelector('input[name="meal"]:checked')
-    console.log(selectedMeal.value)
+function captureMealSelection() {
+    var selectedMeal = document.querySelector('input[name="meal"]:checked').value
+    var displayString = generateRandomMeal(selectedMeal);
+    console.log(displayString);
+}
+
+function generateRandomMeal(mealSelection) {
+        if (mealSelection === 'sides') {
+            return getRandomElement(mealData.sides)
+        } else if (mealSelection ==='mainDishs') {
+            return getRandomElement(mealData.mainDishes)
+        } else if (mealSelection === 'desserts') {
+            return getRandomElement(mealData.disserts)
+        }
+    
+}
+
+function getRandomElement(array) {
+    return array[Math.floor(Math.random() * array.length)];
 }
