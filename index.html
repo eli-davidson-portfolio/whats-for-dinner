@@ -6,35 +6,48 @@
   <body>
     <nav class="nav-bar" name="nav-bar">
       <section id="nav-bar-title">
-What's for Dinner?
+        <h1>What's for Dinner?</h1>
       </section>
-      <section id="add-a-recipe">
+      <section class="button-containter" id="nav-bar-button-container">
         <div class="button" id="add-a-recipe-button">add a recipe</div>
       </section>
     </nav>
     <main class="main">
       <section class="box" id="meal-select">
           <section class="box-title" id="meal-select-title">
-            What are you looking for?
+            <h2>What are you looking for?</h2>
           </section>
-          <section class="meal-select-content">
-            <form>
-              <input type="radio" id="side" name="meal" value="sides">Side</input>
-              <input type="radio" id="main-dish" name="meal" value="mainDishs">Main Dish</input>
-              <input type="radio" id="dessert" name="meal" value="desserts">Dessert</input>
-              <input disabled="true" type="radio" id="entire-meal" name="meal" value="entire-meal">Entire Meal</input>
+          <section class="box-content">
+            <form class="form">
+              <label class="meal-select-radio-label">
+                <input type="radio" id="side" name="meal" value="sides"/>Sides
+              </label>
+              <label class="meal-select-radio-label">
+              <input type="radio" id="main-dish" name="meal" value="mainDishs"/>Main Dish
+              </label>
+              <label class="meal-select-radio-label">
+              <input type="radio" id="dessert" name="meal" value="desserts"/>Desserts
+              </label>
+              <label class="meal-select-radio-label">
+              <input disabled="true" type="radio" id="entire-meal" name="meal" value="entire-meal"/>Entire Meal
+              </label>
             </form>
         </section>
-        <section class="button-container">
-            <div class="button" id="meal-select-button">let's cook</div>
+        <section class="button-containter">
+            <div class="button" id="meal-select-button">let's cook!</div>
         </section>
       </section>
       <section class="box" id="meal-select">
-        <section class="box-title" id="meal-select-title">What are you looking for?</section>
-        <section id="meal-display-content">
-          <img src="./assets/cookpot.svg" alt="crockpot icon">
+        <section class="box-title hidden" id="meal-select-title">
+          <h2>You should eat:</h2>
         </section>
-        <div class="button" id="meal-display-button">clear</div>
+        <section class="box-content" id="meal-display-content">
+          <img src="./assets/cookpot.svg" alt="crockpot icon">
+          <label class="hidden" class="result">Result</label>
+        </section>
+        <section class="button-containter hidden">
+          <div class="button" id="meal-display-button">clear</div>
+        </section>
       </section>
     </main>
   </body>
