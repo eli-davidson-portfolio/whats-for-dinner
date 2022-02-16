@@ -19,6 +19,7 @@ body {
 h1 {
     font-size: 18px;
     line-height: 0;
+    font-weight: 500;
 }
 
 h2 {
@@ -39,14 +40,7 @@ main {
 
 section {
     border: solid;
-    border-color: yellow;
-    border-width: 1px;
-}
-
-div {
-    
-    border: solid;
-    border-color: rgb(38, 0, 255);
+    border-color: rgb(47, 0, 255);
     border-width: 1px;
 }
 
@@ -54,7 +48,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between ;
-    background-color: teal;
+    background-color: #0fb9b1;
     padding: 10px;
 }
 
@@ -90,6 +84,10 @@ img {
  align-items: flex-end;
 }
 
+.required {
+    color: ee5253;
+}
+
 .box-content {
     height: 50%;
     width: 90%;
@@ -101,9 +99,6 @@ img {
 .form {
     display: flex;
     flex-direction: column;
-    border: solid;
-    border-color: rgb(60, 255, 0);
-    border-width: 1px;
 }
 
 .result {
@@ -122,17 +117,16 @@ img {
 
 .button {
     width: 30%;
-    margin-right: 20px;
-    border: solid;
-    border-radius: 15px 15px;
-    border-width: 1px;
+    margin: 20px;
+    border-radius: 5px 5px;
     padding: 6px;
     text-align: center;
     text-transform: uppercase;
 }
 
 #nav-bar-title {
- width: 50%;
+    f
+    width: 50%;
 }
 
 #nav-bar-button-container {
@@ -146,11 +140,19 @@ img {
 }
 
 #meal-select-button {
-    background-color: teal;
+    border: solid;
+    border-color: blue ;
+    border-width: 1px;
+    background-color: #0fb9b1;
 }
 
-#meal-display-button {
-    background-color: grey;
+#meal-select-button-container {
+     justify-content: start;
+}
+
+#clear-meal-button {
+    color: white;
+    background-color: 95a5a6;
 }
 
 .hidden {

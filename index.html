@@ -15,7 +15,7 @@
     <main class="main">
       <section class="box" id="meal-select">
           <section class="box-title" id="meal-select-title">
-            <h2>What are you looking for?</h2>
+            <h2>What are you looking for?<span class="required"> *</span></h2>
           </section>
           <section class="box-content">
             <form class="form">
@@ -33,20 +33,20 @@
               </label>
             </form>
         </section>
-        <section class="button-containter">
+        <section class="button-containter" id="meal-select-button-container">
             <div class="button" id="meal-select-button">let's cook!</div>
         </section>
       </section>
       <section class="box" id="meal-select">
-        <section class="box-title hidden" id="meal-select-title">
+        <section class="box-title " id="meal-select-title">
           <h2>You should eat:</h2>
         </section>
         <section class="box-content" id="meal-display-content">
-          <img src="./assets/cookpot.svg" alt="crockpot icon">
-          <label class="hidden" class="result">Result</label>
+          <img class="hidden" src="./assets/cookpot.svg" alt="crockpot icon">
+          <label class="" class="result">Result</label>
         </section>
-        <section class="button-containter hidden">
-          <div class="button" id="meal-display-button">clear</div>
+        <section class="button-containter" id="clear-meal-button-container">
+          <div class="button" id="clear-meal-button">clear</div>
         </section>
       </section>
     </main>
