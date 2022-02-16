@@ -8,59 +8,59 @@ red - #ee5253
 
 */
 
-
+* {
+    border: solid;
+    border-radius: 1px;
+    border-color: green ;
+}
 
 body {
     font-family: 'Roboto', sans-serif;
-    height: 100vh;
+    height: 100%;
     margin: 0;
-}
-
-h1 {
-    font-size: 18px;
-    line-height: 0;
-    font-weight: 500;
-}
-
-h2 {
-    font-size: 18px;
-    line-height: 0;
-    font-weight: 500;
-}
-
-main {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 100vh;
-    background-image: url("./assets/burger-friends.jpg");
-    background-position: center;
-    background-size: cover;
 }
 
 nav {
     display: flex;
     align-items: center;
     justify-content: space-between ;
-    background-color: #0fb9b1;
     padding: 10px;
 }
-.meal-select-radio-label {
-    line-height: 2;
-}
-img {
-    height: 100px;
+
+.nav-bar-container {
+    display:flex;
+    width: 50%;
+    height: 35px;
 }
 
-#meal-select-box{
+#nav-bar-button-container {
+    justify-content: flex-end;
+}
+
+#nav-bar-title {
     display: flex;
-    flex-direction: column;
-    
+    align-items: center;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+main {
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-image: url("./assets/burger-friends.jpg");
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
 }
 
 .box {
-   height: 250px;
-   width: 350px;
+   height: 50%;
+   width: 33%;
+   min-height: 200px;
+   max-height: 300px;
+   min-width: 200px;
    border-radius: 15px 15px;
    display: flex;
    flex-direction: column;
@@ -69,49 +69,52 @@ img {
    background-color: rgba(225, 225, 225, .9);
 }
 
-.box-title {
- display: flex;
- height: 30%;
- width: 90%;
- align-items: center;
-}
-
-#meal-display-title-container {
+.meal-display-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+}
+
+img {
+    height: 50%;
+}
+
+.box-title-container {
+    height: 30%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
     justify-content: flex-end;
 }
 
-#meal-display-title {
-    font-style: italic;
-}
-
-.required {
-    color: ee5253;
-}
-
-.box-content {
-    height: 50%;
-    width: 90%;
-    display: flex;
-    justify-content: center;
+#meal-display-title-container { 
+    height: 50%;  
     align-items: center;
 }
 
-#form-container {
-    justify-content: flex-start;
-}
-
-.form {
+.box-content-container {
+    height: 50%;
+    width: 90%;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    overflow-wrap: break-word;
+}
+
+#meal-select-form-container {
+    flex-direction: column;
+    align-items: flex-start;
     justify-content: space-around;
 }
 
 .result {
-    font-size: 30px;
-    line-height: 0;
+    text-align: center;
+    font-size: 150%;
     font-weight: 500;
+    text-transform: uppercase;
 }
 
 .button-containter {
@@ -122,79 +125,27 @@ img {
     align-items: center;
 }
 
+#meal-select-button-container {
+    justify-content: flex-start;
+}
+
 .button {
-    width: 30%;
+    width: 110px;
+    height: 20px;
     border-radius: 5px 5px;
     padding: 6px;
     text-align: center;
     text-transform: uppercase;
     border: solid;
+    border-width: 1;
 }
 
-section {
-     border: solid;
-    border-color: rgb(255, 251, 0) ;
-    border-width: 1px;
-    
+.italic {
+    font-style: italic;
 }
 
-.happy-button {
-    border: solid;
-    border-color: blue ;
-    border-width: 1px;
-    background-color: #0fb9b1;
-}
-
-.sad-button {
-    color: white;
-    background-color: #95a5a6;
-    border-color: black ;
-    border-width: 1px;
-}
-
-#nav-bar-title {
-    width: 50%;
-}
-
-#nav-bar-button-container {
-    width: 50%;
-}
-
-#add-a-recipe-button {
-    margin: 0;
-    width: 25%;
-    
-}
-
-#meal-select-title {
-
-}
-
-#meal-select-button {
-
-}
-
-#meal-select-button-container {
-     justify-content: start;
-}
-
-.meal-display {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-#meal-display-title-container {
-    height: 50%;  
-}
-
-#meal-display-content {
-    flex-direction: column;
-    justify-content: center;
-    height: 20%;
+.required {
+    color: ee5253;
 }
 
 .hidden {
@@ -203,18 +154,12 @@ section {
 
 .disabled {
     color: gray;
+    background-color: transparent;
 }
 
-.happy-button {
-    border: solid;
-    border-color: blue ;
-    border-width: 1px;
+.brand {
     background-color: #0fb9b1;
 }
 
-.sad-button {
-    color: white;
-    background-color: 95a5a6;
-    border-color: black ;
-    border-width: 1px;
-}
+
+

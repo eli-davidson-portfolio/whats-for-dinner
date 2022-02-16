@@ -43,7 +43,7 @@ var mealData = {
         "Coconut Rice",
         "Caeser Salad",
         "Shrimp Summer Rolls",
-        "Garlic Butter Mushrooms",
+        "Garlic Butter Mushrooms!",
         "Hush Puppies"
   ],
   mainDishes: [
