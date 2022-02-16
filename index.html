@@ -9,44 +9,48 @@
         <h1>What's for Dinner?</h1>
       </section>
       <section class="button-containter" id="nav-bar-button-container">
-        <div class="button" id="add-a-recipe-button">add a recipe</div>
+        <div class="button sad-button" id="add-a-recipe-button">add a recipe</div>
       </section>
     </nav>
     <main class="main">
       <section class="box" id="meal-select">
-          <section class="box-title" id="meal-select-title">
+          <section class="box-title" id="meal-select-title-container">
             <h2>What are you looking for?<span class="required"> *</span></h2>
           </section>
-          <section class="box-content">
+          <section class="box-content" id="form-container">
             <form class="form">
               <label class="meal-select-radio-label">
-                <input type="radio" id="side" name="meal" value="sides"/>Sides
+                <input type="radio" id="side" name="meal" value="sides"/>Side
               </label>
               <label class="meal-select-radio-label">
               <input type="radio" id="main-dish" name="meal" value="mainDishs"/>Main Dish
               </label>
               <label class="meal-select-radio-label">
-              <input type="radio" id="dessert" name="meal" value="desserts"/>Desserts
+              <input type="radio" id="dessert" name="meal" value="desserts"/>Dessert
               </label>
               <label class="meal-select-radio-label">
-              <input disabled="true" type="radio" id="entire-meal" name="meal" value="entire-meal"/>Entire Meal
+              <input disabled="true" type="radio" id="entire-meal" name="meal" value="entire-meal"/><span class="disabled">Entire Meal</span>
               </label>
             </form>
         </section>
         <section class="button-containter" id="meal-select-button-container">
-            <div class="button" id="meal-select-button">let's cook!</div>
+            <div class="button happy-button" id="meal-select-button">let's cook!</div>
         </section>
       </section>
       <section class="box" id="meal-display">
-        <section class="box-title " id="meal-display-title-container">
-          <h2 id="meal-display-title">You should make:</h2>
+        <section class="meal-display" id="meal-display-image">
+          <img src="./assets/cookpot.svg" alt="crockpot icon">
         </section>
-        <section class="box-content" id="meal-display-content">
-          <img class="hidden" src="./assets/cookpot.svg" alt="crockpot icon">
-          <label class="result">Black Forest Cake</label>
-        </section>
-        <section class="button-containter" id="clear-meal-button-container">
-          <div class="button" id="clear-meal-button">clear</div>
+        <section class="meal-display hidden">
+          <section class="box-title" id="meal-display-title-container">
+            <h2 id="meal-display-title">You should make:</h2>
+          </section>
+          <section class="box-content" id="meal-display-content">
+            <label class="result">Black Forest Cake!</label>
+          </section>
+          <section class="button-containter" id="clear-meal-button-container">
+            <div class="button sad-button" id="clear-meal-button">clear</div>
+          </section>
         </section>
       </section>
     </main>

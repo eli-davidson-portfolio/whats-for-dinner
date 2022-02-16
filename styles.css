@@ -38,12 +38,6 @@ main {
     background-size: cover;
 }
 
-section {
-    border: solid;
-    border-color: rgb(47, 0, 255);
-    border-width: 1px;
-}
-
 nav {
     display: flex;
     align-items: center;
@@ -51,14 +45,13 @@ nav {
     background-color: #0fb9b1;
     padding: 10px;
 }
-
+.meal-select-radio-label {
+    line-height: 2;
+}
 img {
     height: 100px;
 }
 
-.meal-select-radio-label {
-    line-height: 1.5
-}
 #meal-select-box{
     display: flex;
     flex-direction: column;
@@ -80,8 +73,7 @@ img {
  display: flex;
  height: 30%;
  width: 90%;
- display: flex;
- align-items: flex-end;
+ align-items: center;
 }
 
 #meal-display-title-container {
@@ -106,9 +98,14 @@ img {
     align-items: center;
 }
 
+#form-container {
+    justify-content: flex-start;
+}
+
 .form {
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
 }
 
 .result {
@@ -131,6 +128,28 @@ img {
     padding: 6px;
     text-align: center;
     text-transform: uppercase;
+    border: solid;
+}
+
+section {
+     border: solid;
+    border-color: rgb(255, 251, 0) ;
+    border-width: 1px;
+    
+}
+
+.happy-button {
+    border: solid;
+    border-color: blue ;
+    border-width: 1px;
+    background-color: #0fb9b1;
+}
+
+.sad-button {
+    color: white;
+    background-color: #95a5a6;
+    border-color: black ;
+    border-width: 1px;
 }
 
 #nav-bar-title {
@@ -138,13 +157,13 @@ img {
 }
 
 #nav-bar-button-container {
- width: 50%;
+    width: 50%;
 }
 
 #add-a-recipe-button {
     margin: 0;
     width: 25%;
-    background-color: white;
+    
 }
 
 #meal-select-title {
@@ -152,33 +171,50 @@ img {
 }
 
 #meal-select-button {
-    border: solid;
-    border-color: blue ;
-    border-width: 1px;
-    background-color: #0fb9b1;
+
 }
 
 #meal-select-button-container {
      justify-content: start;
 }
 
+.meal-display {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 #meal-display-title-container {
-    height: 50%;
-    
+    height: 50%;  
 }
 
 #meal-display-content {
     flex-direction: column;
     justify-content: center;
-    align-items: ;
     height: 20%;
-}
-
-#clear-meal-button {
-    color: white;
-    background-color: 95a5a6;
 }
 
 .hidden {
     display: none;
+}
+
+.disabled {
+    color: gray;
+}
+
+.happy-button {
+    border: solid;
+    border-color: blue ;
+    border-width: 1px;
+    background-color: #0fb9b1;
+}
+
+.sad-button {
+    color: white;
+    background-color: 95a5a6;
+    border-color: black ;
+    border-width: 1px;
 }
