@@ -83,20 +83,69 @@ var mealData = {
   ]
 }
 
-var selectMealButton = document.getElementById('select-meal-button');
-var clearMealButton = document.getElementById('clear-meal-button');
-var addMealButton = document.getElementById('add-meal-button');
-var selectedMeal = document.querySelector('input[name="meal"]:checked')
-
-selectMealButton.addEventListener('click', createMeal);
-clearMealButton.addEventListener('click', clearMeal);
-addMealButton.addEventListener('click', addMeal);
-
-function createMeal() {
-    if (selectedMeal) {
-        generateRandomMeal(selectedMeal.value)
+var application = {
+    navBar = {
+        title: document.getElementById('nav-bar-title'),
+        addMealButton: document.getElementById('add-meal-button'),
+        setEventListeners() {
+            this.addMealButton.addEventListener('click', this.displayForm);
+        },
+        displayForm() {
+            return
+        }
+    },
+    selectMealBox = {
+        title: document.getElementById('select-meal-title'),
+        mealType = document.querySelector('input[name="meal"]:checked'),
+        selectMealButton: document.getElementById('select-meal-button'),
+        setEventListeners() {
+            this.selectMealButton.addEventListener('click', this.createMeal);
+        },
+        createMeal() {
+            if (selectedMealType) {
+                var generatedMeal = generateRandomMeal(mealData[selectedMeal.value])
+                displayMeal(generatedMeal);
+            }
+        }
+    },
+    displayMealBox = {
+        title: document.getElementById('meal-display-title'),
+        display: document.getElementById('meal-display'),
+        image: document.getElementById('meal-display-image'),
+        result: document.getElementById('meal-display-result'),
+        clearMealButton: document.getElementById('clear-meal-button'),
+        setEventListeners() {
+            this.clearMealButton.addEventListener('click', this.clearMeal);
+        },
+        displayMeal() {
+            this.display.classList.remove('hidden');
+            this.image.classList.add('hidden')
+        },
+        clearMeal() {
+            return
+        }
     }
+}
+
+var keys = Object.keys(application);
+
+for (var i = 0; i < keys.length; i++) {
+    keys[i].setEventListeners();
+}
+
+
+
+
+
+
+
+function 
     
+}
+
+function displayMeal(mealName) {
+
+
 }
 
 function clearMeal() {
