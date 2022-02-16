@@ -33,58 +33,63 @@ CYOA - Error Handling and Clear Button
 [ ] User should not be able to click the [“Let’s Cook” button for a recipe unless they have selected an option.
 */
 
-var mealData = {
-  sides: [
-        "Miso Glazed Carrots",
-        "Coleslaw",
-        "Garden Salad",
-        "Crispy Potatoes",
-        "Sweet Potato Tots",
-        "Coconut Rice",
-        "Caeser Salad",
-        "Shrimp Summer Rolls",
-        "Garlic Butter Mushrooms!",
-        "Hush Puppies"
-  ],
-  mainDishes: [
-        "Spaghetti and Meatballs",
-        "Pineapple Chicken",
-        "Shakshuka",
-        "Thai Yellow Curry",
-        "Bibimbap",
-        "Chicken Parmesean",
-        "Butternut Squash Soup",
-        "BBQ Chicken Burgers",
-        "Ramen",
-        "Empanadas",
-        "Chicken Fried Rice",
-        "Sheet Pan Fajitas",
-        "Margarita Pizza"
-    ],
-  dessertss: [
-      "Apple Pie",
-      "Lemon Meringue Pie",
-      "Black Forest Cake",
-      "Banana Bread",
-      "Peach Cobbler",
-      "Cheesecake",
-      "Funfetti Cake",
-      "Baklava",
-      "Flan",
-      "Macarons",
-      "Macaroons",
-      "Chocolate Cupcakes",
-      "Pavlova",
-      "Pumpkin Pie",
-      "Key Lime Pie",
-      "Tart Tatin",
-      "Croissants",
-      "Eclairs"
-  ]
-}
-
 var application = {
-    navBar = {
+    mealData: {
+        sides: [
+            "Miso Glazed Carrots",
+            "Coleslaw",
+            "Garden Salad",
+            "Crispy Potatoes",
+            "Sweet Potato Tots",
+            "Coconut Rice",
+            "Caeser Salad",
+            "Shrimp Summer Rolls",
+            "Garlic Butter Mushrooms!",
+            "Hush Puppies"
+        ],
+        mainDishes: [
+            "Spaghetti and Meatballs",
+            "Pineapple Chicken",
+            "Shakshuka",
+            "Thai Yellow Curry",
+            "Bibimbap",
+            "Chicken Parmesean",
+            "Butternut Squash Soup",
+            "BBQ Chicken Burgers",
+            "Ramen",
+            "Empanadas",
+            "Chicken Fried Rice",
+            "Sheet Pan Fajitas",
+            "Margarita Pizza"
+        ],
+        desserts: [
+            "Apple Pie",
+            "Lemon Meringue Pie",
+            "Black Forest Cake",
+            "Banana Bread",
+            "Peach Cobbler",
+            "Cheesecake",
+            "Funfetti Cake",
+            "Baklava",
+            "Flan",
+            "Macarons",
+            "Macaroons",
+            "Chocolate Cupcakes",
+            "Pavlova",
+            "Pumpkin Pie",
+            "Key Lime Pie",
+            "Tart Tatin",
+            "Croissants",
+            "Eclairs"
+        ],
+        generateRandomMeal(mealType) {
+            return this.getRandomElement(this[mealType]);
+        },
+        getRandomElement(array) {
+            return array[Math.floor(Math.random() * array.length)];
+        }
+    },
+    navBar: {
         title: document.getElementById('nav-bar-title'),
         addMealButton: document.getElementById('add-meal-button'),
         setEventListeners() {
@@ -94,80 +99,53 @@ var application = {
             return
         }
     },
-    selectMealBox = {
+    selectMealBox: {
         title: document.getElementById('select-meal-title'),
-        mealType = document.querySelector('input[name="meal"]:checked'),
+        mealType: document.querySelector('input[name="meal"]:checked'),
         selectMealButton: document.getElementById('select-meal-button'),
         setEventListeners() {
             this.selectMealButton.addEventListener('click', this.createMeal);
         },
         createMeal() {
-            if (selectedMealType) {
-                var generatedMeal = generateRandomMeal(mealData[selectedMeal.value])
-                displayMeal(generatedMeal);
+            if (application.selectMealBox.mealType) {
+                var generatedMeal = application.mealData.generateRandomMeal(application.selectMealBox.mealType.value)
+                application.displayMealBox.displayMeal(generatedMeal);
+            } else {
+                console.log('please select a meal')
             }
         }
     },
-    displayMealBox = {
+    displayMealBox: {
         title: document.getElementById('meal-display-title'),
         display: document.getElementById('meal-display'),
         image: document.getElementById('meal-display-image'),
         result: document.getElementById('meal-display-result'),
         clearMealButton: document.getElementById('clear-meal-button'),
-        setEventListeners() {
-            this.clearMealButton.addEventListener('click', this.clearMeal);
-        },
-        displayMeal() {
-            this.display.classList.remove('hidden');
-            this.image.classList.add('hidden')
+        displayMeal(generatedMeal) {
+            this.result.innerText = generatedMeal;
+            application.show(this.display);
+            application.hide(this.image);
         },
         clearMeal() {
-            return
+            application.displayMealBox.result.innerText = '';
+            application.displayMealBox.display.classList.add('hidden');
+            application.displayMealBox.image.classList.remove('hidden')
+        },
+        setEventListeners() {
+            this.clearMealButton.addEventListener('click', this.clearMeal);
         }
+    },
+    show(element) {
+        element.classList.remove('hidden');
+    },
+    hide(element) {
+        element.classList.add('hidden');
     }
 }
 
 var keys = Object.keys(application);
 
-for (var i = 0; i < keys.length; i++) {
-    keys[i].setEventListeners();
+for (var i = 1; i < keys.length; i++) {
+    application[keys[i]].setEventListeners();
 }
 
-
-
-
-
-
-
-function 
-    
-}
-
-function displayMeal(mealName) {
-
-
-}
-
-function clearMeal() {
-    
-}
-
-function addMeal() {
-    
-}
-
-function getRandomElement(array) {
-    return array[Math.floor(Math.random() * array.length)];
-}
-
-function show(object) {
-    object.classList.remove('hidden');
-}
-
-function hide(object) {
-    object.classList.add('hidden');
-}
-
-function disable(object) {
-    object.disabled = true;
-}
