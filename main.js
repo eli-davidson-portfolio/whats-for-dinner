@@ -11,7 +11,7 @@ HTML
 [x] Create box 1, including title, radio buttons, and a button.
 [x] Create box 2 and with svg space and a space to display two lines of text.
 CSS
-[ ] create colors, and classes to match the HTML structure.
+[x] create colors, and classes to match the HTML structure.
 
 ##Iteration 1: Minimum Viable Product (MVP) - Add Random Side, Main and Dessert Functionality
 [x] (if possible) disable entire meal radio button
@@ -61,7 +61,7 @@ var mealData = {
         "Sheet Pan Fajitas",
         "Margarita Pizza"
     ],
-  disserts: [
+  dessertss: [
       "Apple Pie",
       "Lemon Meringue Pie",
       "Black Forest Cake",
@@ -83,25 +83,28 @@ var mealData = {
   ]
 }
 
-var crockpot = document.getElementById('crockpot');
-//var form = document.getElementbyID('meal-select-form');
+var selectMealButton = document.getElementById('select-meal-button');
+var clearMealButton = document.getElementById('clear-meal-button');
+var addMealButton = document.getElementById('add-meal-button');
+var selectedMeal = document.querySelector('input[name="meal"]:checked')
 
-var buttons = {
-    letsCook: document.getElementById('lets-cook'),
+selectMealButton.addEventListener('click', createMeal);
+clearMealButton.addEventListener('click', clearMeal);
+addMealButton.addEventListener('click', addMeal);
+
+function createMeal() {
+    if (selectedMeal) {
+        generateRandomMeal(selectedMeal.value)
+    }
+    
 }
 
-buttons.letsCook.addEventListener('click', captureMealSelection);
-
-function captureMealSelection() {
-    //disable(form);
-    //hide(crockpot);
-    var selectedMeal = document.querySelector('input[name="meal"]:checked').value
-    var displayString = generateRandomMeal(selectedMeal);
-    console.log(displayString);
+function clearMeal() {
+    
 }
 
-function generateRandomMeal(selectedMeal) {
-    return getRandomElement(mealData[selectedMeal])
+function addMeal() {
+    
 }
 
 function getRandomElement(array) {
