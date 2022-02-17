@@ -7,50 +7,156 @@ grey - #95a5a6;
 red - #ee5253
 
 */
+
+
+
 body {
     font-family: 'Roboto', sans-serif;
-    margin: 0
-}
-nav {
-    display: grid;
-    grid-template-columns: repeat(3, auto);
-    background-color: teal;
-}
-#nav-bar-title {
-    grid-column: 1;
-    margin: 10;
+    height: 100%;
+    margin: 0;
 }
 
-#add-a-recipe {
-    justify-self: end;
-    grid-column: 3;
-    margin: 10;
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between ;
+    padding: 10px;
+}
+
+.nav-bar-container {
+    display:flex;
+    width: 50%;
+    height: 35px;
+}
+
+#nav-bar-button-container {
+    justify-content: flex-end;
+}
+
+#nav-bar-title {
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 600;
 }
 
 main {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-height: 100%;
- background-image: url("./assets/burger-friends.jpg");
- background-position: center;
- background-size: cover;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-image: url("./assets/burger-friends.jpg");
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
 }
 
 .box {
-    margin: 50px;
-    height: 200px; 
- background-color: rgba(225, 225, 225, .9);
- justify-content: center;
+   height: 50%;
+   width: 33%;
+   min-height: 200px;
+   max-height: 300px;
+   min-width: 200px;
+   border-radius: 15px 15px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-around;
+   background-color: rgba(225, 225, 225, .9);
 }
 
-#crockpot {  
-  width: 100;
-  height: auto;
-  display: block;
-    margin: auto;
-    margin-top: 50;
+.meal-display-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-#lets-cook {
-    background-color: teal;
+img {
+    height: 50%;
 }
+
+.box-title-container {
+    height: 30%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#meal-display-title-container { 
+    height: 50%;  
+    align-items: center;
+}
+
+.box-content-container {
+    height: 50%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-wrap: break-word;
+}
+
+#select-meal-form-container {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+.result {
+    text-align: center;
+    font-size: 150%;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.button-containter {
+    height: 30%;
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#select-meal-button-container {
+    justify-content: flex-start;
+}
+
+.button {
+    width: 110px;
+    height: 20px;
+    border-radius: 5px 5px;
+    padding: 6px;
+    text-align: center;
+    text-transform: uppercase;
+    border: solid;
+    border-width: 1;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.required {
+    color: ee5253;
+}
+
+.hidden {
+    display: none;
+}
+
+.disabled {
+    
+    color: gray;
+    background-color: transparent;
+}
+
+.brand {
+    background-color: #0fb9b1;
+}
+
+
+
