@@ -23,7 +23,6 @@ The spec for this project can be found [here](https://frontend.turing.io/project
 ### Display Random Meal
 
 1. Select a meal type from the box reading "What are you looking for?"
-    * NOTE: The "Entire meal" option is currently unavailable.
 2. Click the "Let's Cook!" button, located on the same box.
 3. Your selected meal option will be displayed on the box to the right.
 
