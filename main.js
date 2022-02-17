@@ -1,5 +1,5 @@
-var application = {
-    mealData: {
+
+    var mealData = {
         sides: [
             "Miso Glazed Carrots",
             "Coleslaw",
@@ -53,72 +53,60 @@ var application = {
         getRandomElement(array) {
             return array[Math.floor(Math.random() * array.length)];
         }
-    },
-    navBar: {
+    }
+
+    var navBar = {
         title: document.getElementById('nav-bar-title'),
         addMealButton: document.getElementById('add-meal-button'),
-        setEventListeners() {
-            this.addMealButton.addEventListener('click', this.displayForm);
-        },
         displayForm() {
-            return
+            return;
         }
-    },
-    selectMealBox: {
+    }
+
+    var selectMealBox = {
         title: document.getElementById('select-meal-title'),
         selectMealButton: document.getElementById('select-meal-button'),
-        setEventListeners() {
-            this.selectMealButton.addEventListener('click', this.createMeal);
-        },
-        createMeal() {
-            var mealType = document.querySelector('input[name="meal"]:checked').value
+        getMealType() {
+            var mealType = document.querySelector('input[name="meal"]:checked').value;
             if (mealType) {
-                var generatedMeal = application.mealData.generateRandomMeal(mealType)
-                application.displayMealBox.displayMeal(generatedMeal);
+                return mealType;
             } 
         }
-    },
-    displayMealBox: {
+    }
+
+    var displayMealBox = {
         title: document.getElementById('meal-display-title'),
         display: document.getElementById('meal-display'),
         image: document.getElementById('meal-display-image'),
         result: document.getElementById('meal-display-result'),
         clearMealButton: document.getElementById('clear-meal-button'),
-        displayMeal(generatedMeal) {
-            this.result.innerText = generatedMeal;
-            application.show(this.display);
-            application.hide(this.image);
+        displayMeal(Meal) {
+            this.result.innerText = Meal;
+            this.hide(this.image);
+            this.show(this.display);
         },
         clearMeal() {
-            application.displayMealBox.result.innerText = '';
-            application.displayMealBox.display.classList.add('hidden');
-            application.displayMealBox.image.classList.remove('hidden')
+            this.result.innerText = '';
+            this.hide(this.display);
+            this.show(this.image);
         },
-        setEventListeners() {
-            this.clearMealButton.addEventListener('click', this.clearMeal);
+        show(element) {
+            element.classList.remove('hidden');
+        },
+        hide(element) {
+             element.classList.add('hidden');
         }
-    },
-    show(element) {
-        element.classList.remove('hidden');
-    },
-    hide(element) {
-        element.classList.add('hidden');
-    },
-    enable(element) {
-        element.classList.remove('disabled');
-    },
-    disable(element) {
-        element.classList.add('disabled');
     }
-}
-
-window.addEventListener('load', initializeApplication)
-
-function initializeApplication() {
-    var keys = Object.keys(application);
-    for (var i = 1; i < keys.length; i++) {
-        application[keys[i]].setEventListeners();
-    }  
-}
-
+    
+document.addEventListener('click', function (e) {
+    var id = e.target.id ;
+    if (id ===  'select-meal-button') {
+        var mealType = selectMealBox.getMealType();  
+        var randomMeal = mealData.generateRandomMeal(mealType);  
+        displayMealBox.displayMeal(randomMeal);
+    } else if (id === 'clear-meal-button') {
+        displayMealBox.clearMeal();
+    }
+    }
+)
 
