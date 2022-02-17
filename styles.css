@@ -41,14 +41,27 @@ nav {
 }
 
 main {
-    height: 100%;
+    height: 50%;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: stretch;
     background-image: url("./assets/burger-friends.jpg");
     background-position: center;
     background-size: cover;
     overflow: hidden;
+}
+
+#newMain {
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#add-form {
+    display: flex;
+    justify-content: space-between;
 }
 
 .box {
@@ -144,9 +157,6 @@ img {
     color: white;
 }
 
-#add-meal-button {
-    background-color: rgba(225, 225, 225, .9);
-}
 
 .italic {
     font-style: italic;
@@ -155,6 +165,8 @@ img {
 .required {
     color: ee5253;
 }
+
+
 
 .hidden {
     display: none;
@@ -170,5 +182,8 @@ img {
     background-color: #0fb9b1;
 }
 
+.frosted {
+    background-color:rgba(225, 225, 225, .9);
+}
 
 
