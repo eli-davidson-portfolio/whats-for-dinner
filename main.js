@@ -75,9 +75,7 @@ var application = {
             if (mealType) {
                 var generatedMeal = application.mealData.generateRandomMeal(mealType)
                 application.displayMealBox.displayMeal(generatedMeal);
-            } else {
-                console.log('please select a meal')
-            }
+            } 
         }
     },
     displayMealBox: {
