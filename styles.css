@@ -131,8 +131,21 @@ img {
     padding: 6px;
     text-align: center;
     text-transform: uppercase;
-    border: solid;
-    border-width: 1;
+    background-color: white;
+    
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+#clear-meal-button {
+    background-color: #95a5a6;
+    color: white;
+}
+
+#add-meal-button {
+    background-color: rgba(225, 225, 225, .9);
 }
 
 .italic {
