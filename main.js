@@ -101,14 +101,14 @@ var application = {
     },
     selectMealBox: {
         title: document.getElementById('select-meal-title'),
-        mealType: document.querySelector('input[name="meal"]:checked'),
         selectMealButton: document.getElementById('select-meal-button'),
         setEventListeners() {
             this.selectMealButton.addEventListener('click', this.createMeal);
         },
         createMeal() {
-            if (application.selectMealBox.mealType) {
-                var generatedMeal = application.mealData.generateRandomMeal(application.selectMealBox.mealType.value)
+            var mealType = document.querySelector('input[name="meal"]:checked').value
+            if (mealType) {
+                var generatedMeal = application.mealData.generateRandomMeal(mealType)
                 application.displayMealBox.displayMeal(generatedMeal);
             } else {
                 console.log('please select a meal')
@@ -140,6 +140,12 @@ var application = {
     },
     hide(element) {
         element.classList.add('hidden');
+    },
+    enable(element) {
+        element.classList.remove('disabled');
+    },
+    disable(element) {
+        element.classList.add('disabled');
     }
 }
 
