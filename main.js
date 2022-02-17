@@ -48,7 +48,13 @@
             "Eclairs"
         ],
         generateRandomMeal(mealType) {
-            return this.getRandomElement(this[mealType]);
+            if (mealType === 'entire-meal') {
+                var mainDish = this.getRandomElement(this.mainDishes);
+                var side = this.getRandomElement(this.sides);
+                var dessert = this.getRandomElement(this.desserts);
+                return `${mainDish} with a side of ${side} and ${dessert} for dessert!`
+            }
+            return `${this.getRandomElement(this[mealType])}!`;
         },
         getRandomElement(array) {
             return array[Math.floor(Math.random() * array.length)];
