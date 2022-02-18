@@ -9,53 +9,70 @@
         <label class="title" id="nav-bar-title">What's for Dinner?</label>
       </section>
       <section class="nav-bar-container" id="nav-bar-button-container">
-        <div class="button disabled" id="add-meal-button">add a recipe</div>
+        <div class="button frosted" id="add-meal-button">add a recipe</div>
       </section>
     </nav>
     <main class="main">
-      <section class="box" id="select-meal">
-          <section class="box-title-container" id="select-meal-title-container">
-            <label class="title" id="select-meal-title">
-                What are you looking for?<span class="required"> *</span>
-            </label>
-          </section>
-          <section class="box-content-container" id="select-meal-form-container">
-              <label class="select-meal-radio-label">
-                <input type="radio" id="side" name="meal" value="sides"/>Side
-              </label>
-              <label class="select-meal-radio-label">
-              <input type="radio" id="main-dish" name="meal" value="mainDishes"/>Main Dish
-              </label>
-              <label class="select-meal-radio-label">
-              <input type="radio" id="dessert" name="meal" value="desserts"/>Dessert
-              </label>
-              <label class="select-meal-radio-label">
-              <input type="radio" id="entire-meal" name="meal" value="entire-meal"/><span >Entire Meal</span>
-              </label>
-        </section>
-        <section class="button-containter" id="select-meal-button-container">
-            <div class="button brand" id="select-meal-button">let's cook!</div>
-        </section>
+      <section id="newMain">
+<section class="box" id="select-meal">
+  <section class="box-title-container" id="select-meal-title-container">
+    <label class="title" id="select-meal-title">
+      What are you looking for?<span class="required"> *</span>
+    </label>
+  </section>
+  <section class="box-content-container" id="select-meal-form-container">
+    <label class="select-meal-radio-label">
+      <input type="radio" id="side" name="meal" value="sides" />Side
+    </label>
+    <label class="select-meal-radio-label">
+      <input type="radio" id="main-dish" name="meal" value="mainDishes" />Main Dish
+    </label>
+    <label class="select-meal-radio-label">
+      <input type="radio" id="dessert" name="meal" value="desserts" />Dessert
+    </label>
+    <label class="select-meal-radio-label">
+      <input type="radio" id="entire-meal" name="meal" value="entire-meal" /><span>Entire Meal</span>
+    </label>
+  </section>
+  <section class="button-containter" id="select-meal-button-container">
+    <div class="button brand" id="select-meal-button">let's cook!</div>
+  </section>
+</section>
+<section class="box" id="display-meal">
+  <section class="meal-display-container" id="meal-display-image">
+    <img src="./assets/cookpot.svg" alt="crockpot icon">
+  </section>
+  <section class="meal-display-container hidden" 
+  id="meal-display">
+    <section class="box-title-container" id="meal-display-title-container">
+      <label class="title italic" id="meal-display-title">
+        You should make:
+      </label>
+    </section>
+    <section class="box-content-container" id="meal-display-result-container">
+      <label class="result" id="meal-display-result">Garlic Butter Mushrooms!</label>
+    </section>
+    <section class="button-containter" id="clear-meal-button-container">
+      <div class="button" id="clear-meal-button">clear</div>
+    </section>
+  </section>
+</section>
       </section>
-      <section class="box" id="display-meal">
-        <section class="meal-display-container" id="meal-display-image">
-          <img src="./assets/cookpot.svg" alt="crockpot icon">
-        </section>
-        <section class="meal-display-container hidden" id="meal-display">
-          <section class="box-title-container" id="meal-display-title-container">
-                        <label class="title italic" id="meal-display-title">
-                          You should make:
-                        </label>
-          </section>
-          <section class="box-content-container" id="meal-display-result-container">
-            <label class="result" id="meal-display-result">Garlic Butter Mushrooms!</label>
-          </section>
-          <section class="button-containter" id="clear-meal-button-container">
-            <div class="button disabled" id="clear-meal-button">clear</div>
-          </section>
-        </section>
-      </section>
+          <nav class="addForm frosted hidden" id="add-form">
+            <label for="recipe-type">Recipe Type:</label>
+            <select name="recipe-selector" id="rs">
+              <option value="sides">Side</option>
+              <option value="mainDishes">Main Dish</option>
+              <option value="desserts">Dessert</option>
+            </select>
+            <label>Recipe Name:</label>
+            <input id="recipe-text" />
+              <div class="button brand" id="submit-form-button">add new</div>
+              <div class="button" id="cancel-form-button">cancel</div>
+            </section>
+          </nav>
     </main>
+    
   </body>
   <script type="text/javascript" src="main.js"></script>
 </html>
