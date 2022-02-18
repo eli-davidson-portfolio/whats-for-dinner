@@ -52,14 +52,14 @@ var mealData = {
             var mainDish = this.getRandomElement(this.mainDishes);
             var side = this.getRandomElement(this.sides);
             var dessert = this.getRandomElement(this.desserts);
-            randomMeal = `${mainDish} with a side of ${side} and ${dessert} for dessert!`
+            randomMeal = `${mainDish} with a side of ${side} and ${dessert} for dessert!`;
         } else {
             randomMeal = `${this.getRandomElement(this[mealType])}!`;
         }
         displayMealBox.displayMeal(randomMeal);
     },
     getRandomElement(array) {
-        return array[Math.floor(Math.random() * array.length)]
+        return array[Math.floor(Math.random() * array.length)];
     }
 }
 
@@ -98,11 +98,11 @@ var addForm = {
     selector: document.getElementById("rs"),
     recipeText: document.querySelector('#recipe-text'),
     showForm() {
-        show(this.form)
+        show(this.form);
     },
     hideForm() {
         this.recipeText.value = '';
-        hide(this.form)
+        hide(this.form);
     },
     addRecipe() {
         var selectedMealType = this.selector.options[this.selector.selectedIndex].value;
@@ -112,8 +112,8 @@ var addForm = {
 }
 
 document.addEventListener('click', function (e) {
-    manageClickEvent(e.target.id)
-})
+    manageClickEvent(e.target.id);
+});
 
 function manageClickEvent(buttonName) {
     if (buttonName === 'select-meal-button') {
@@ -121,11 +121,11 @@ function manageClickEvent(buttonName) {
     } else if (buttonName === 'clear-meal-button') {
         displayMealBox.clearMeal();
     } else if (buttonName === 'submit-form-button') {
-        addForm.addRecipe()
+        addForm.addRecipe();
     } else if (buttonName === 'cancel-form-button') {
-        addForm.hideForm()
+        addForm.hideForm();
     } else if (buttonName === 'add-meal-button') {
-        addForm.showForm()
+        addForm.showForm();
     }
 }
 
