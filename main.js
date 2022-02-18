@@ -118,14 +118,12 @@ var displayMealBox = {
             var selectedMealType = selector.options[selector.selectedIndex].value;
             var recipeText = document.querySelector('#recipe-text').value
             mealData[selectedMealType].unshift(recipeText)
-            console.log(mealData[selectedMealType]);
             document.querySelector('#recipe-text').value = '';
         }
     
 
             document.addEventListener('click', function (e) {
                 var id = e.target.id ;
-                console.log(id);
                 if (id ===  'select-meal-button') {
                     var mealType = selectMealBox.getMealType();  
                     var randomMeal = mealData.generateRandomMeal(mealType);  
