@@ -80,6 +80,30 @@
         }
     }
 
+var displayMealBox = {
+    title: document.getElementById('meal-display-title'),
+    display: document.getElementById('meal-display'),
+    image: document.getElementById('meal-display-image'),
+    result: document.getElementById('meal-display-result'),
+    clearMealButton: document.getElementById('clear-meal-button'),
+    displayMeal(Meal) {
+        this.result.innerText = Meal;
+        this.hide(this.image);
+        this.show(this.display);
+    },
+    clearMeal() {
+        this.result.innerText = '';
+        this.hide(this.display);
+        this.show(this.image);
+    },
+    show(element) {
+        element.classList.remove('hidden');
+    },
+    hide(element) {
+        element.classList.add('hidden');
+    }
+}
+
         function showForm() {
             document.getElementById('add-form').classList.remove('hidden')
         }
@@ -95,6 +119,7 @@
             var recipeText = document.querySelector('#recipe-text').value
             mealData[selectedMealType].unshift(recipeText)
             console.log(mealData[selectedMealType]);
+            document.querySelector('#recipe-text').value = '';
         }
     
 
@@ -109,9 +134,11 @@
                     displayMealBox.clearMeal();
                 } else if (id === 'submit-form-button') { 
                     addRecipe()
-                } else if (id === 'clear-form-button') { 
-                 return
+                    hideForm()
+                } else if (id === 'cancel-form-button') { 
+                    hideForm()
+                } else if (id === 'add-meal-button') {
+                    showForm()
                 }
             }
 )
-
