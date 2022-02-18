@@ -106,8 +106,10 @@ var addForm = {
     },
     addRecipe() {
         var selectedMealType = this.selector.options[this.selector.selectedIndex].value;
-        mealData[selectedMealType].unshift(this.recipeText.value);
-
+        if (selectedMealType) {
+            mealData[selectedMealType].unshift(this.recipeText.value);
+            this.hideForm();
+        }
     }
 }
 
