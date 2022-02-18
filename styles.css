@@ -8,6 +8,12 @@ red - #ee5253
 
 */
 
+* {
+    border: solid black 1px;
+    
+
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -52,7 +58,7 @@ main {
     background-image: url("./assets/burger-friends.jpg");
     background-position: center;
     background-size: cover;
-    overflow: hidden;
+    overflow: hidden; 
 }
 
 #newMain {

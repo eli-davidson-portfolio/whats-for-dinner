@@ -57,7 +57,7 @@
             return `${this.getRandomElement(this[mealType])}!`;
         },
         getRandomElement(array) {
-            return array[Math.floor(Math.random() * array.length)];
+            return array[Math.floor(Math.random() * array.length)]
         }
     }
 
