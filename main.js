@@ -63,14 +63,6 @@ var mealData = {
     }
 }
 
-var navBar = {
-    title: document.getElementById('nav-bar-title'),
-    addMealButton: document.getElementById('add-meal-button'),
-    displayForm() {
-        return;
-    }
-}
-
 var selectMealBox = {
     title: document.getElementById('select-meal-title'),
     selectMealButton: document.getElementById('select-meal-button'),
