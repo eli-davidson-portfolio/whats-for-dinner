@@ -7,7 +7,7 @@
             "Crispy Potatoes",
             "Sweet Potato Tots",
             "Coconut Rice",
-            "Caeser Salad",
+            "Caesar Salad",
             "Shrimp Summer Rolls",
             "Garlic Butter Mushrooms",
             "Hush Puppies"
