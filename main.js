@@ -108,14 +108,13 @@ var addForm = {
         var selectedMealType = this.selector.options[this.selector.selectedIndex].value;
         if (selectedMealType) {
             mealData[selectedMealType].unshift(this.recipeText.value);
-            this.hideForm()
+            this.hideForm();
         }
     }
 }
 
 document.addEventListener('click', function (e) {
     manageClickEvent(e.target.id);
-    console.log(e.target.id)
 });
 
 function manageClickEvent(buttonName) {
