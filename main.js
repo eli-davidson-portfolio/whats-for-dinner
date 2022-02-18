@@ -80,8 +80,14 @@
         }
     }
 
+        function showForm() {
+            document.getElementById('add-form').classList.remove('hidden')
+        }
 
-   
+        function hideForm() {
+            document.getElementById('add-form').classList.add('hidden')
+        }
+        
 
         function addRecipe() {
             var selector = document.getElementById("rs");
