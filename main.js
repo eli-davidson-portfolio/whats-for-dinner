@@ -116,18 +116,24 @@ document.addEventListener('click', function (e) {
 });
 
 function manageClickEvent(buttonName) {
-    if (buttonName === 'select-meal-button') {
-        selectMealBox.getMealType();
-    } else if (buttonName === 'clear-meal-button') {
-        displayMealBox.clearMeal();
-    } else if (buttonName === 'submit-form-button') {
-        addForm.addRecipe();
-    } else if (buttonName === 'cancel-form-button') {
-        addForm.hideForm();
-    } else if (buttonName === 'add-meal-button') {
-        addForm.showForm();
+    switch (buttonName){
+        case 'select-meal-button':
+            selectMealBox.getMealType();
+        break;
+        case 'clear-meal-button':
+            displayMealBox.clearMeal();
+        break;
+        case 'submit-form-button':
+           addForm.addRecipe();
+        break;
+        case 'cancel-form-button':
+            addForm.hideForm();
+        break;
+        case 'add-meal-button':
+            addForm.showForm();
+        break;
     }
-}
+} 
 
 function show(element) {
     element.classList.remove('hidden');
