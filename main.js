@@ -80,39 +80,32 @@
         }
     }
 
-    var displayMealBox = {
-        title: document.getElementById('meal-display-title'),
-        display: document.getElementById('meal-display'),
-        image: document.getElementById('meal-display-image'),
-        result: document.getElementById('meal-display-result'),
-        clearMealButton: document.getElementById('clear-meal-button'),
-        displayMeal(Meal) {
-            this.result.innerText = Meal;
-            this.hide(this.image);
-            this.show(this.display);
-        },
-        clearMeal() {
-            this.result.innerText = '';
-            this.hide(this.display);
-            this.show(this.image);
-        },
-        show(element) {
-            element.classList.remove('hidden');
-        },
-        hide(element) {
-             element.classList.add('hidden');
+
+   
+
+        function addRecipe() {
+            var selector = document.getElementById("rs");
+            var selectedMealType = selector.options[selector.selectedIndex].value;
+            var recipeText = document.querySelector('#recipe-text').value
+            mealData[selectedMealType].unshift(recipeText)
+            console.log(mealData[selectedMealType]);
         }
-    }
     
-document.addEventListener('click', function (e) {
-    var id = e.target.id ;
-    if (id ===  'select-meal-button') {
-        var mealType = selectMealBox.getMealType();  
-        var randomMeal = mealData.generateRandomMeal(mealType);  
-        displayMealBox.displayMeal(randomMeal);
-    } else if (id === 'clear-meal-button') {
-        displayMealBox.clearMeal();
-    }
-    }
+
+            document.addEventListener('click', function (e) {
+                var id = e.target.id ;
+                console.log(id);
+                if (id ===  'select-meal-button') {
+                    var mealType = selectMealBox.getMealType();  
+                    var randomMeal = mealData.generateRandomMeal(mealType);  
+                    displayMealBox.displayMeal(randomMeal);
+                } else if (id === 'clear-meal-button') {
+                    displayMealBox.clearMeal();
+                } else if (id === 'submit-form-button') { 
+                    addRecipe()
+                } else if (id === 'clear-form-button') { 
+                 return
+                }
+            }
 )
 
