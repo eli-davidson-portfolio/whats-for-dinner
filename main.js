@@ -119,21 +119,8 @@ var addForm = {
     }
 }
 
-
-function show(element) {
-    element.classList.remove('hidden');
-}
-
-function hide(element) {
-    element.classList.add('hidden');
-}
-
-
-
 document.addEventListener('click', function (e) {
-    var buttonName = e.target.id ;
-    console.log(buttonName)
-    manageClickEvent(buttonName)
+    manageClickEvent(e.target.id)
 })
 
 function manageClickEvent(buttonName) {
@@ -150,5 +137,12 @@ function manageClickEvent(buttonName) {
     }
 }
 
+function show(element) {
+    element.classList.remove('hidden');
+}
+
+function hide(element) {
+    element.classList.add('hidden');
+}
 
 
