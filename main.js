@@ -88,55 +88,61 @@ var displayMealBox = {
     clearMealButton: document.getElementById('clear-meal-button'),
     displayMeal(Meal) {
         this.result.innerText = Meal;
-        this.hide(this.image);
-        this.show(this.display);
+        hide(this.image);
+        show(this.display);
     },
     clearMeal() {
         this.result.innerText = '';
-        this.hide(this.display);
-        this.show(this.image);
+        hide(this.display);
+        show(this.image);
+    }
+
+}
+
+
+function show(element) {
+    element.classList.remove('hidden');
+}
+
+function hide(element) {
+    element.classList.add('hidden');
+}
+
+var addForm = {
+    form: document.getElementById('add-form'),
+    selector: document.getElementById("rs"),
+    recipeText: document.querySelector('#recipe-text'),
+    showForm() {
+        show(this.form)
     },
-    show(element) {
-        element.classList.remove('hidden');
+    hideForm() {
+        hide(this.form)
     },
-    hide(element) {
-        element.classList.add('hidden');
+    addRecipe() {
+        var selectedMealType = this.selector.options[this.selector.selectedIndex].value;
+        mealData[selectedMealType].unshift(this.recipeText.value);
+        this.recipeText.value = '';
     }
 }
 
-        function showForm() {
-            document.getElementById('add-form').classList.remove('hidden')
-        }
+document.addEventListener('click', function (e) {
+    var id = e.target.id ;
+    if (id ===  'select-meal-button') {
+        var mealType = selectMealBox.getMealType();  
+        var randomMeal = mealData.generateRandomMeal(mealType);  
+        displayMealBox.displayMeal(randomMeal);
+    } else if (id === 'clear-meal-button') {
+        displayMealBox.clearMeal();
+    } else if (id === 'submit-form-button') { 
+        addForm.addRecipe()
+        addForm.hideForm()
+    } else if (id === 'cancel-form-button') { 
+        addForm.hideForm()
+    } else if (id === 'add-meal-button') {
+        addForm.showForm()
+    }
+}
 
-        function hideForm() {
-            document.getElementById('add-form').classList.add('hidden')
-        }
-        
 
-        function addRecipe() {
-            var selector = document.getElementById("rs");
-            var selectedMealType = selector.options[selector.selectedIndex].value;
-            var recipeText = document.querySelector('#recipe-text').value
-            mealData[selectedMealType].unshift(recipeText)
-            document.querySelector('#recipe-text').value = '';
-        }
-    
 
-            document.addEventListener('click', function (e) {
-                var id = e.target.id ;
-                if (id ===  'select-meal-button') {
-                    var mealType = selectMealBox.getMealType();  
-                    var randomMeal = mealData.generateRandomMeal(mealType);  
-                    displayMealBox.displayMeal(randomMeal);
-                } else if (id === 'clear-meal-button') {
-                    displayMealBox.clearMeal();
-                } else if (id === 'submit-form-button') { 
-                    addRecipe()
-                    hideForm()
-                } else if (id === 'cancel-form-button') { 
-                    hideForm()
-                } else if (id === 'add-meal-button') {
-                    showForm()
-                }
-            }
 )
