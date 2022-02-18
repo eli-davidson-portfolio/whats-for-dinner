@@ -9,7 +9,7 @@
             "Coconut Rice",
             "Caeser Salad",
             "Shrimp Summer Rolls",
-            "Garlic Butter Mushrooms!",
+            "Garlic Butter Mushrooms",
             "Hush Puppies"
         ],
         mainDishes: [
@@ -18,7 +18,7 @@
             "Shakshuka",
             "Thai Yellow Curry",
             "Bibimbap",
-            "Chicken Parmesean",
+            "Chicken Parmesan",
             "Butternut Squash Soup",
             "BBQ Chicken Burgers",
             "Ramen",
