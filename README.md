@@ -46,6 +46,8 @@ If a valid entry is recieved, the form will disappear, and your recipe will be a
 
 *NOTE: SQL injection won't work because the application is not connected to a backend, but feel free to try if you want.*
 
+![Add a recipe](https://user-images.githubusercontent.com/94997199/154772460-eabcc8e8-c539-48ec-b0d9-0de8c323d8c7.png)
+
 ## Troubleshooting
 
 ### No meal item is displayed when clicking "Let's Cook!"
