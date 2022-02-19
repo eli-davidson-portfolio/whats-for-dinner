@@ -1,6 +1,6 @@
 # What's for Dinner?
 ## Overview
-"What's for dinner?" is a responsive single page web application built using HTML5, CSS3 and vanilla JavaScript. The application suggests selects random meal from a pre-defined list, and displays it on the user's screen. It has been deployed to gitHub pages [here.](https://elleshadow.github.io/whats-for-dinner/)
+"What's for dinner?" is a responsive single page web application built using HTML5, CSS3 and vanilla JavaScript. The application suggests a random meal from a pre-defined list, and displays it on the user's screen. It has been deployed to gitHub pages [here.](https://elleshadow.github.io/whats-for-dinner/)
 
 The spec for this project can be found [here](https://frontend.turing.io/projects/module-1/dinner.html). 
 ### Learning Goals
@@ -11,7 +11,7 @@ The spec for this project can be found [here](https://frontend.turing.io/project
 ### Contributors
 -[Eli Davidson](https://github.com/elleshadow)
 ### Technologies Used
-- Github open source version control software: [Website](https://github.com/)
+- Git 
 
 - HTML
 - CSS
@@ -39,7 +39,7 @@ When a random meal item is displayed on the right box, the **Clear** button will
 ### Add a recipe
 1. From the **Navigation bar** at the top of the screen, click the **Add a Recipe** button.
 2. A **form** will display at the bottom of the screen to add a new recipe at the bottom of the page.
-3. Select a **Recipr Type** from the selector on the left side of the form. 
+3. Select a **Recipe Type** from the selector on the left side of the form. 
 4. Type an item name into the **Recipe Name** box in the middle of the form.
 5. Click the **Add New** button. 
 If a valid entry is recieved, the form will disappear, and your recipe will be added to the appropriate list, and will be displayed randomly along side the pre-loaded options.
