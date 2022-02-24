@@ -112,6 +112,7 @@ var addForm = {
 }
 
 document.addEventListener('click', function (e) {
+    console.log(e.target.id)
     manageClickEvent(e.target.id);
 });
 
