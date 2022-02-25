@@ -102,7 +102,6 @@ var displayMealBox = {
     result: document.getElementById('meal-display-result'),
     clearMealButton: document.getElementById('clear-meal-button'),
     displayMeal(meal, mealType) {
-        console.log(mealType);
         if(mealType) {
             this.title.innerText = `You added a ${mealType}!`
         } else { 
@@ -126,7 +125,8 @@ var displayMealBox = {
 var addForm = {
     form: document.getElementById('add-form'),
     selector: document.getElementById("rs"),
-    recipeText: document.querySelector('#recipe-text'),
+    recipeNameLabel: document.getElementById("recipe-name-label"),
+    recipeText: document.getElementById("recipe-text"),
     showForm() {
         show(this.form);
         displayMealBox.clearMeal();
@@ -137,19 +137,26 @@ var addForm = {
         hide(this.form);
     },
     addRecipe() {
-
+        this.setRequired()
         if (this.recipeText.value) {
+            this.clearRequired()
             var selectedMealType = this.selector.options[this.selector.selectedIndex].value;
             var caption = this.selector.options[this.selector.selectedIndex].innerText;
             mealData[selectedMealType].unshift(this.recipeText.value);
             displayMealBox.displayMeal(this.recipeText.value, caption);
             this.hideForm();
         }
+    },
+    setRequired() {
+        this.recipeNameLabel.classList.add('required');
+    },
+    clearRequired() {
+        this.recipeNameLabel.classList.remove('required');
+        selectMealBox.clearRadio()
     }
 }
 
 document.addEventListener('click', function (e) {
-    console.log(e.target.id, e.target.name)
     manageClickEvent(e.target.id, e.target.name);
 });
 
@@ -174,10 +181,10 @@ function manageClickEvent(buttonId, buttonName) {
             addForm.showForm();
         break;
         case 'rs':
-            selectMealBox.clearRadio()
+            selectMealBox.clearRadio();
             break;
         case 'recipe-text':
-            selectMealBox.clearRadio()
+            addForm.clearRequired();
         break;
     }
 
