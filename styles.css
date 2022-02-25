@@ -12,6 +12,10 @@ body {
     background-size: cover;
 }
 
+input:focus, textarea:focus, select:focus{
+        outline: none;
+}
+
 nav {
     display: flex;
     align-items: center;
@@ -19,7 +23,7 @@ nav {
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0px 10px 30px 2px rgb(0 0 0 / 100%);
-    margin: 10px
+    margin: 10px;
 }
 
 .nav-bar-container {
@@ -55,7 +59,7 @@ main {
     align-items: center;
 }
 
-.box {
+/*.box {
    height: 50%;
    width: 33%;
    min-height: 200px;
@@ -68,6 +72,21 @@ main {
    justify-content: space-around;
    box-shadow: 0px 10px 30px 5px rgb(0 0 0 / 65%);
    
+}*/
+
+.box {
+    height: 50%;
+   width: 33%;
+   min-height: 200px;
+   max-height: 300px;
+   min-width: 200px;
+   border-radius: 15px 15px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-around;
+
+
 }
 
 .meal-display-container {
@@ -144,7 +163,7 @@ img {
 .button {
     width: 110px;
     height: 20px;
-    border-radius: 5px 5px;
+    border-radius: 15px;
     padding: 6px;
     margin-inline: 5px;
     text-align: center;
@@ -158,8 +177,7 @@ img {
 }
 
 #clear-meal-button {
-    background-color: #95a5a6;
-    color: white;
+    margin-bottom: 15px;
 }
 
 .italic {
@@ -177,13 +195,41 @@ img {
 }
 
 .frosted {
-    background-color: rgba(255, 255, 255, .8);
-    backdrop-filter: blur(10px); 
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.5)
+  );
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5), -1px -1px 2px #aaa,
+    1px 1px 2px #555;
+  backdrop-filter: blur(2.8rem);
+  
+
  
+} 
+.clear {
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.05)
+  );
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5), -1px -1px 2px #aaa,
+    1px 1px 2px #555;
+  backdrop-filter: blur(2.8rem);
 }
 
 .brand {
-    background-color: #0fb9b1;
+
+    background: linear-gradient(
+    to bottom right,
+    rgba(15, 185, 177, .9),
+    rgba(15, 185, 177, .7)
+  );
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5), -1px -1px 2px #aaa,
+    1px 1px 2px #555;
+  backdrop-filter: blur(2.8rem);
+    background-color: 
+    
 }
 
 .hidden {

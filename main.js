@@ -70,9 +70,8 @@ var selectMealBox = {
         addForm.hideForm();
         
         displayMealBox.clearMeal();
-        this.setRequired();
         if (document.querySelector('input[name="meal"]:checked').value){
-            this.clearRequired();
+            
             var mealType = document.querySelector('input[name="meal"]:checked').value;
             this.clearRadio();
             
@@ -114,7 +113,7 @@ var displayMealBox = {
         this.result.innerText = '';
         hide(this.display);
         show(this.image);
-        selectMealBox.clearRequired();
+       
         
     }
 
