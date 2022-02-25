@@ -4,7 +4,7 @@ body {
     justify-content: stretch;
     font-family: 'Roboto', sans-serif;
     height: 100%;
-    min-width: 600px;
+    min-width: 670px;
     
     margin: 0;
     background-image: url("./assets/burger-friends.jpg");
