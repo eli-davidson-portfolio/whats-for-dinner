@@ -80,7 +80,9 @@ var selectMealBox = {
         } 
     },
     clearRadio() {
-        document.querySelector('input[name="meal"]:checked').checked = false;
+        if (document.querySelector('input[name="meal"]:checked').checked) {
+            document.querySelector('input[name="meal"]:checked').checked = false;
+        }
         this.hidebutton();
     },
     hidebutton() {
@@ -88,6 +90,7 @@ var selectMealBox = {
     },
     showbutton() {
        show(this.selectMealButton);
+       addForm.hideForm()
        displayMealBox.clearMeal();
     }
 }
@@ -146,6 +149,7 @@ var addForm = {
 }
 
 document.addEventListener('click', function (e) {
+    console.log(e.target.id, e.target.name)
     manageClickEvent(e.target.id, e.target.name);
 });
 
@@ -168,6 +172,12 @@ function manageClickEvent(buttonId, buttonName) {
         break;
         case 'add-meal-button':
             addForm.showForm();
+        break;
+        case 'rs':
+            selectMealBox.clearRadio()
+            break;
+        case 'recipe-text':
+            selectMealBox.clearRadio()
         break;
     }
 
