@@ -135,6 +135,7 @@ var addForm = {
         hide(this.form);
     },
     addRecipe() {
+
         if (this.recipeText.value) {
             var selectedMealType = this.selector.options[this.selector.selectedIndex].value;
             var caption = this.selector.options[this.selector.selectedIndex].innerText;
@@ -142,7 +143,6 @@ var addForm = {
             displayMealBox.displayMeal(this.recipeText.value, caption);
             this.hideForm();
         }
-
     }
 }
 
