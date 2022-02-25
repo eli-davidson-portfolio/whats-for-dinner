@@ -172,9 +172,7 @@ img {
     box-shadow: 5px 5px 5px 3px rgb(0 0 0 / 50%);
 }
 
-.button:hover {
-    cursor: pointer;
-}
+
 
 #clear-meal-button {
     margin-bottom: 15px;
@@ -228,8 +226,13 @@ img {
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5), -1px -1px 2px #aaa,
     1px 1px 2px #555;
   backdrop-filter: blur(2.8rem);
-    background-color: 
+
     
+}
+
+.button:hover {
+    cursor: pointer;
+    opacity: 1;
 }
 
 .hidden {
