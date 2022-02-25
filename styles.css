@@ -190,30 +190,24 @@ img {
     color: ee5253;
 }
 
-
-
-.hidden {
-    display: none;
-}
-
 .disabled {
     
     color: gray;
     background-color: transparent;
 }
 
+
+.frosted {
+    background-color: rgba(255, 255, 255, .8);
+    backdrop-filter: blur(10px); 
+ 
+}
+
 .brand {
     background-color: #0fb9b1;
 }
 
-.frosted {
-   background-color: rgba(255, 255, 255, .6);
-  backdrop-filter: blur(10px);
-    
-    
-}
-
-
-.hex-code {
-    text-transform: uppercase;
+.hidden {
+    display: none;
+    visibility: hidden;
 }

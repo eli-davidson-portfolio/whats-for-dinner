@@ -65,12 +65,38 @@ var mealData = {
 
 var selectMealBox = {
     title: document.getElementById('select-meal-title'),
+    //radioButtons: document.getElementsByClassName('select-meal-radio-label'),
     selectMealButton: document.getElementById('select-meal-button'),
     getMealType() {
-        var mealType = document.querySelector('input[name="meal"]:checked').value;
-        if (mealType) {
+        addForm.hideForm();
+        
+        displayMealBox.clearMeal();
+        this.setRequired();
+        if (document.querySelector('input[name="meal"]:checked').value){
+            this.clearRequired()
+            var mealType = document.querySelector('input[name="meal"]:checked').value;
+            this.clearRadio();
+            
             mealData.generateRandomMeal(mealType); 
+            
         } 
+    },
+    setRequired() {
+        //this.radioButtons.accentColor = 'red'
+    },
+    clearRequired() {
+        //this.radioButtons.classList.remove("required")
+    },
+    clearRadio() {
+        document.querySelector('input[name="meal"]:checked').checked = false;
+        this.hidebutton()
+    },
+    hidebutton() {
+        hide(this.selectMealButton)
+    },
+    showbutton() {
+       show(this.selectMealButton)
+       displayMealBox.clearMeal()
     }
 }
 
@@ -80,8 +106,15 @@ var displayMealBox = {
     image: document.getElementById('meal-display-image'),
     result: document.getElementById('meal-display-result'),
     clearMealButton: document.getElementById('clear-meal-button'),
-    displayMeal(Meal) {
-        this.result.innerText = Meal;
+    displayMeal(meal, mealType) {
+        console.log(mealType)
+        if(mealType) {
+            this.title.innerText = `You added a ${mealType}!`
+        } else { 
+            this.title.innerText = `You should make:`
+        }
+        
+        this.result.innerText = meal;
         hide(this.image);
         show(this.display);
     },
@@ -89,7 +122,10 @@ var displayMealBox = {
         this.result.innerText = '';
         hide(this.display);
         show(this.image);
+        selectMealBox.clearRequired();
+        
     }
+
 
 }
 
@@ -99,25 +135,35 @@ var addForm = {
     recipeText: document.querySelector('#recipe-text'),
     showForm() {
         show(this.form);
+        displayMealBox.clearMeal()
+        selectMealBox.clearRadio()
     },
     hideForm() {
         this.recipeText.value = '';
         hide(this.form);
     },
     addRecipe() {
-        var selectedMealType = this.selector.options[this.selector.selectedIndex].value;
-        mealData[selectedMealType].unshift(this.recipeText.value);
+        if (this.recipeText.value) {
+            var selectedMealType = this.selector.options[this.selector.selectedIndex].value;
+            var caption = this.selector.options[this.selector.selectedIndex].innerText;
+            mealData[selectedMealType].unshift(this.recipeText.value);
+            displayMealBox.displayMeal(this.recipeText.value, caption)
+            this.hideForm()
+        }
 
     }
 }
 
 document.addEventListener('click', function (e) {
-    console.log(e.target.id)
-    manageClickEvent(e.target.id);
+    console.log(e.target.id, e.target.name)
+    manageClickEvent(e.target.id, e.target.name);
 });
 
-function manageClickEvent(buttonName) {
-    switch (buttonName){
+function manageClickEvent(buttonId, buttonName) {
+    if (buttonName === "meal") {
+        selectMealBox.showbutton()
+    }
+    switch (buttonId){
         case 'select-meal-button':
             selectMealBox.getMealType();
         break;
@@ -134,6 +180,7 @@ function manageClickEvent(buttonName) {
             addForm.showForm();
         break;
     }
+
 } 
 
 function show(element) {
@@ -142,6 +189,7 @@ function show(element) {
 
 function hide(element) {
     element.classList.add('hidden');
+    console.log(element.classList)
 }
 
 
