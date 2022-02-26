@@ -3,6 +3,7 @@ body {
     flex-direction: column;
     justify-content: stretch;
     font-family: 'Roboto', sans-serif;
+    color:rgba(0, 0, 0, 0.596);
     height: 100%;
     min-width: 670px;
     
@@ -21,7 +22,7 @@ nav {
     align-items: center;
     justify-content: space-between ;
     padding: 20px;
-    border-radius: 15px;
+    
     box-shadow: 0px 10px 30px 2px rgb(0 0 0 / 100%);
     
 }
@@ -49,7 +50,7 @@ main {
     flex-direction: column;
     justify-content: flex-end;
     align-items: stretch;
-    margin: 10px;
+    
 }
 
 #newMain {
@@ -80,7 +81,7 @@ main {
    min-height: 200px;
    max-height: 300px;
    min-width: 200px;
-   border-radius: 15px 15px;
+   
    display: flex;
    flex-direction: column;
    align-items: center;
@@ -238,7 +239,7 @@ img {
 }
 
 .button:hover {
-    zoom: 1.05;
+    zoom: .9;
     cursor: pointer;
     opacity: 1;
 }
