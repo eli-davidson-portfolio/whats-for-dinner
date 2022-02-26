@@ -55,7 +55,7 @@ main {
 #newMain {
     height: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -200,12 +200,13 @@ img {
 .frosted {
   background: linear-gradient(
     to bottom right,
-    rgba(255, 255, 255, 0.9),
-    rgba(255, 255, 255, 0.5)
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.05)
   );
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5), -1px -1px 2px #aaa,
     1px 1px 2px #555;
-  backdrop-filter: blur(2.8rem);
+  backdrop-filter:  blur(10px) saturate(100%) contrast(45%) brightness(130%);
+
   
 
  
@@ -226,7 +227,7 @@ img {
     background: linear-gradient(
     to bottom right,
     rgba(15, 185, 177, .9),
-    rgba(15, 185, 177, .7)
+    rgba(15, 185, 177, .3)
   );
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5), -1px -1px 2px #aaa,
     1px 1px 2px #555;
